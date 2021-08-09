@@ -1,11 +1,14 @@
 package mod1
 
-import {
-	"fmt"
-}
+import (
+	"errors"
+)
 
-//Calculate calculates and returns the simple interest for a principal p, rate of interest r for time duration t years
-func Calculate(p float64, r float64, t float64) float64 {
-	interest := p * (r / 100) * t
-	return interest
+func Hello(name string) (string, error) {
+	if name == "" {
+		return name, errors.New("empty name")
+	}
+
+	reply := "Hello " + name
+	return reply, nil
 }
